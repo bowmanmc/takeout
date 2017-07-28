@@ -17,6 +17,12 @@ module.exports = {
             }, {
                 test: /\.scss$/,
                 loaders: ['style-loader', 'css-loader', 'sass-loader']
+            }, {
+                test: require.resolve('jquery'),
+                use: [{
+                    loader: 'expose-loader',
+                    options: '$'
+                }]
             }
         ]
     },
